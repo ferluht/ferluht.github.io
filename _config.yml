@@ -1,6 +1,3 @@
 remote_theme: fongandrew/hydeout
 
----
-layout: index
-title: Home
----
+paginate: 5
