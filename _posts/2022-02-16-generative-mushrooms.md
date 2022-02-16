@@ -1,5 +1,5 @@
 ---
-title: "Tutorial I: my first post"
+title: "Drawing generative NFT mushrooms with Three.js 🍄"
 date: 2020-03-18
 layout: post
 ---
