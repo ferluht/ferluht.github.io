@@ -349,12 +349,19 @@ For name generation I used a simple [Markov chain](https://en.wikipedia.org/wiki
 
 <details>
 <summary><b>Here are some samples of mushroom names generated using this approach</b></summary>
+
 Stricosphaete cinus
+
 Fusarium sium confsisomyc
+
 Etiformansum poonic
+
 Hellatatum bataticola
+
 Armillanata gossypina mortic
+
 Chosporium anniiffact
+
 Fla po sporthrina
 </details>
 
@@ -371,6 +378,8 @@ Fla po sporthrina
 ### Preparing for the drop
 
 To prepare a project for a release on fxhash one simply needs to change all random calls in the code to the fxrand() method as [described here](https://github.com/fxhash/fxhash-simple-boilerplate). The main idea is that your code must generate unique outputs for each hash but exactly the same output for the same hash. Then test the token in the sandbox and finally mint it when the minting will be opened. That’s it! 
+
+### Drop!
 
 This brings us to the Mushroom Atlas (what I named this collection). You can check it out and see its variations [here](https://www.fxhash.xyz/generative/9202). Although it was not sold out like some of my previous works, I think that this is the most advanced and challenging thing that I’ve made in generative art yet. Hope that those who minted this token also enjoyed their fungi in the non-fungible world!
 
