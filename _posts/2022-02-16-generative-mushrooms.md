@@ -4,7 +4,7 @@ date: 2022-02-16
 layout: post
 ---
 <p align="center">
-<img src="./assets/imgs/shrooms_main.jpg" width="600px">
+<img src="./assets/imgs/shrooms_main.jpg" alt="Otinium caseubbacula - one of the generative mushroom specimens" width="50%">
 </p>
 
 ### Part 1: Intro
