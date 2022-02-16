@@ -284,6 +284,28 @@ var scales = THREE.BufferGeometryUtils.mergeBufferGeometries(bufgeoms);
 
 To prevent unreal intersections when spawning multiple mushrooms in the scene one needs to check collisions between them. [Here I found a code snippet](https://stackoverflow.com/questions/11473755/how-to-detect-collision-in-three-js) that checks collisions using raycasting from each mesh point. To reduce computation time I generate a low-poly twin of the mushroom along with the mushroom itself. This low-poly model then is used to check collisions with other shrooms.
 
+<details>
+<summary><b>Collisions check code</b></summary>
+
+<pre><code class="javascript">
+for (var vertexIndex = 0; vertexIndex < Player.geometry.attributes.position.array.length; vertexIndex++)
+{       
+    var localVertex = new THREE.Vector3().fromBufferAttribute(Player.geometry.attributes.position, vertexIndex).clone();
+    var globalVertex = localVertex.applyMatrix4(Player.matrix);
+    var directionVector = globalVertex.sub( Player.position );
+
+    var ray = new THREE.Raycaster( Player.position, directionVector.clone().normalize() );
+    var collisionResults = ray.intersectObjects( collidableMeshList );
+    if ( collisionResults.length > 0 && collisionResults[0].distance < directionVector.length() ) 
+    {
+        // a collision occurred... do something...
+    }
+}
+</code></pre>
+</details>
+
+<br>
+
 <p align="center">
 <img src="/assets/imgs/collisions.jpg" 
 	 alt="Simplified models for faster collision check" width="100%">
