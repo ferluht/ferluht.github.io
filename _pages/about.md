@@ -4,6 +4,6 @@ layout: page
 title: About me
 ---
 
-More details about me on this page with links to my social media profiles and so on.
+Creative coder from Moscow. Keen on AI and music. Writing modular synths from scratch. Growing generative mushrooms.
 
-![](https://www.jorgesanz.net/assets/imgs/me/jsanz_small4.png)
+![](https://www.github.com/ferluht/ferluht.github.io/assets/imgs/avatar.jpg)
