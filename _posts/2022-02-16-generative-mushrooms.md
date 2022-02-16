@@ -368,5 +368,5 @@ To prepare a project for a release on fxhash one simply needs to change all rand
 
 ### Drop!
 
-This brings us to the Mushroom Atlas (what I named this collection). You can check it out and see its variations [here](https://www.fxhash.xyz/generative/9202). Although it was not sold out like some of my previous works, I think that this is the most advanced and challenging thing that I’ve made in generative art yet. Hope that those who minted this token also enjoyed their fungi in the non-fungible world!
+This brings us to the Mushroom Atlas (what I named this collection). [You can check it out and see its variations here](https://www.fxhash.xyz/generative/9202). Although it was not sold out like some of my previous works, I think that this is the most advanced and challenging thing that I’ve made in generative art yet. Hope that those who minted this token also enjoyed their fungi in the non-fungible world!
 
