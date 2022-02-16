@@ -349,20 +349,7 @@ For name generation I used a simple [Markov chain](https://en.wikipedia.org/wiki
 
 <details>
 <summary><b>Here are some samples of mushroom names generated using this approach</b></summary>
-
-Stricosphaete cinus
-
-Fusarium sium confsisomyc
-
-Etiformansum poonic
-
-Hellatatum bataticola
-
-Armillanata gossypina mortic
-
-Chosporium anniiffact
-
-Fla po sporthrina
+Stricosphaete cinus, Fusarium sium confsisomyc, Etiformansum poonic, Hellatatum bataticola, Armillanata gossypina mortic, Chosporium anniiffact, Fla po sporthrina
 </details>
 
 <br>
