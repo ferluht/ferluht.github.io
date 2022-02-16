@@ -5,7 +5,7 @@ layout: post
 ---
 
 <p align="center">
-<img src="https://github.com/ferluht/ferluht.github.io/blob/main/assets/imgs/shrooms_main.jpg" 
+<img src="{{site.url}}assets/imgs/shrooms_main.jpg" 
 	 alt="Otinium caseubbacula - one of the generative mushroom specimens" width="100%">
 </p>
 
