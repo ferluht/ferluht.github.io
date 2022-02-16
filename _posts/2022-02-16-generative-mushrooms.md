@@ -4,6 +4,10 @@ date: 2022-02-16
 layout: post
 ---
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <p align="center">
 <img src="/assets/imgs/shrooms_main.jpg" 
 	 alt="Otinium caseubbacula - one of the generative mushroom specimens" width="100%">
