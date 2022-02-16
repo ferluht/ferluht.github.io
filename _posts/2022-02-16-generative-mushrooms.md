@@ -3,8 +3,10 @@ title: "Drawing generative NFT mushrooms with Three.js 🍄"
 date: 2022-02-16
 layout: post
 ---
+
 <p align="center">
-<img src="./assets/imgs/shrooms_main.jpg" alt="Otinium caseubbacula - one of the generative mushroom specimens" width="50%">
+<img src="https://github.com/ferluht/ferluht.github.io/blob/main/assets/imgs/shrooms_main.jpg" 
+	 alt="Otinium caseubbacula - one of the generative mushroom specimens" width="100%">
 </p>
 
 ### Part 1: Intro
