@@ -2,6 +2,8 @@
 title: "Drawing generative NFT mushrooms with Three.js 🍄"
 date: 2022-02-16
 image: /assets/imgs/shrooms_main.jpg
+author: ferluht
+description: "In this post, I’ll try to give a brief but complete overview of what generative art is, how it is connected to NFTs, and how one can start making generative things on a blockchain. I’ll try to answer all these questions based on my personal experience of making and releasing a NFT collection of generative mushrooms written in javascript."
 layout: post
 ---
 
