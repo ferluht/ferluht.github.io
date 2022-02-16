@@ -48,7 +48,10 @@ Ok, let’s end up with all that philosophy and move on to the technical part. T
 
 Basically, a stipe can be parametrized as a closed contour extrusion along some spline (let’s call it base spline). To create the base spline I used [CatmullRomCurve3](https://threejs.org/docs/#api/en/extras/curves/CatmullRomCurve3) class from three js. Then, I created the geometry vertex-by-vertex by moving another closed shape along the base spline and finally connected those vertices with faces. I used [BufferGeometry](https://threejs.org/docs/#api/en/core/BufferGeometry) for that purpose.
 
-```javascript
+<details>
+<summary><b>Stipe generation code</b></summary>
+
+<pre><code class="javascript">
 stipe_vSegments = 30; // vertical resolution
 stipe_rSegments = 20; // angular resolution
 stipe_points = []; // vertices
@@ -80,7 +83,10 @@ var stipe = new THREE.BufferGeometry();
 stipe.setAttribute('position', new THREE.BufferAttribute(new Float32Array(stipe_points), 3));
 stipe.setIndex(stipe_indices);
 stipe.computeVertexNormals();
-```
+</code></pre>
+</details>
+
+<br>
 
 <p align="center">
 <img src="/assets/imgs/stipe.jpg" 
@@ -92,7 +98,10 @@ stipe.computeVertexNormals();
 
 To be more natural, the stipe surface may somehow vary along its height. I defined stipe radius as a function of the angle and relative height of the point on the base spline. Then a slight amount of noise is added to the radius value depending on these parameters.
 
-```javascript
+<details>
+<summary><b>Stipe noise code</b></summary>
+
+<pre><code class="javascript">
 base_radius = 1; // mean radius
 noise_c = 2; // higher this - higher the deformations
 
@@ -100,7 +109,10 @@ noise_c = 2; // higher this - higher the deformations
 function stipe_radius(a, t) {
 	return base_radius + (1 - t)*(1 + Math.random())*noise_c;
 }
-```
+</code></pre>
+</details>
+
+<br>
 
 <p align="center">
 <img src="/assets/imgs/stipe_noise.jpg" 
@@ -112,7 +124,10 @@ function stipe_radius(a, t) {
 
 Cap can also be parameterized as a spline (let’s also call it a base spline) rotating around the top of the stipe. Let’s name the surface spawned by this rotation a base surface. Then base surface will be defined as a function of the position of a point on the base spline and the rotation around the stipe top. This parametrization will allow us to gracefully apply some noises to the surface later.
 
-```javascript
+<details>
+<summary><b>Cap generation code</b></summary>
+
+<pre><code class="javascript">
 cap_rSegments = 30; // radial resolution
 cap_cSegments = 20; // angular resolution
 
@@ -146,7 +161,10 @@ var cap = new THREE.BufferGeometry();
 cap.setAttribute('position', new THREE.BufferAttribute(new Float32Array(cap_points), 3));
 cap.setIndex(cap_indices);
 cap.computeVertexNormals();
-```
+</code></pre>
+</details>
+
+<br>
 
 <p align="center">
 <img src="/assets/imgs/cap.jpg" 
@@ -158,7 +176,10 @@ cap.computeVertexNormals();
 
 To be more realistic, the cap also needs some noise. I divided cap noise into 3 components: radial, angular and normal noises. Radial noise affects the relative position of the vertex on the base spline. Angular noise changes the angle of base spline rotation around the top of the stipe. And finally, normal noise changes the position of the vertex along the base surface normal at that point. While defining the cap surface in a polar coordinate system it’s useful to apply 2d [Perlin noise](https://en.wikipedia.org/wiki/Perlin_noise) for these distortions. I used [noisejs](https://github.com/josephg/noisejs) library for that.
 
-```javascript
+<details>
+<summary><b>Cap noise code</b></summary>
+
+<pre><code class="javascript">
 function radnoise(a, t) {
   return -Math.abs(NOISE.perlin2(t * Math.cos(a), t * Math.sin(a)) * 0.5);
 }
@@ -200,7 +221,10 @@ function cap_surface(a0, t0) {
 
   return surface_point;
 }
-```
+</code></pre>
+</details>
+
+<br>
 
 <p align="center">
 <img src="/assets/imgs/cap_noise.jpg" 
@@ -213,7 +237,7 @@ function cap_surface(a0, t0) {
 The geometries of the gills and ring are very similar to the geometry of the cap. An easy way to create scales is to spawn noisy sphere points around some random anchor points on the cap surface and then create [ConvexGeometry](https://threejs.org/docs/#examples/en/geometries/ConvexGeometry) based on them.
 
 <details>
-<summary>Scales generation code</summary>
+<summary><b>Scales generation code</b></summary>
 
 <pre><code class="javascript">
 bufgeoms = [];
