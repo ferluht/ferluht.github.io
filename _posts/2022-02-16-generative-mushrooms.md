@@ -1,6 +1,7 @@
 ---
 title: "Drawing generative NFT mushrooms with Three.js 🍄"
 date: 2022-02-16
+image: /assets/imgs/shrooms_main.jpg
 layout: post
 ---
 
