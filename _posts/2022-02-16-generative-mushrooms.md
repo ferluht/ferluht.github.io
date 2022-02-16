@@ -208,6 +208,9 @@ function cap_surface(a0, t0) {
 
 The geometries of the gills and ring are very similar to the geometry of the cap. An easy way to create scales is to spawn noisy sphere points around some random anchor points on the cap surface and then create [ConvexGeometry](https://threejs.org/docs/#examples/en/geometries/ConvexGeometry) based on them.
 
+<details>
+  <summary>Scales generation code</summary>
+
 ```javascript
 bufgeoms = [];
 scales_num = 20;
@@ -240,6 +243,8 @@ for (var i = 0; i < scales_num; i++) {
 var scales = THREE.BufferGeometryUtils.mergeBufferGeometries(bufgeoms);
 ```
 
+</details>
+
 <p align="center">
 <img src="/assets/imgs/rest_of_mushroom.jpg" 
 	 alt="Scales, gills, ring and the full geometry of a mushroom" width="100%">
@@ -254,4 +259,22 @@ To prevent unreal intersections when spawning multiple mushrooms in the scene on
 <img src="/assets/imgs/collisions.jpg" 
 	 alt="Simplified models for faster collision check" width="100%">
 <i>Simplified models for faster collision check</i>
+</p>
+
+### Rendering and stylization
+
+Initially, I wanted to achieve an effect of 2d-drawing despite all the generation being made in 3d. The first thing that comes to mind in the context of stylization is the outline effect. I’m not a pro in shaders so I just took the outline effect [from this example](https://stemkoski.github.io/Three.js/Outline.html). Using it I got a nice pencil style of the shroom contour.
+
+<p align="center">
+<img src="/assets/imgs/outline.jpg" 
+	 alt="Three js outline effect" width="100%">
+<i>Three js outline effect</i>
+</p>
+
+The next thing on the way back to 2d is proper colorization. The texture should be a bit noisy and have some soft shadows. There is a lazy hack for those who, like me, don't want to deal with UV-maps. Instead of generating a real texture and wrapping it using UV one can define vertex colors of an object using [BufferGeometry](https://threejs.org/docs/#api/en/core/BufferGeometry) API. More than that, using this approach the color of a vertex can be also parameterized as a function of angle and position, so generation of a noisy procedural texture becomes slightly easier.
+
+<p align="center">
+<img src="/assets/imgs/color.jpg" 
+	 alt="Adding some vertex color" width="100%">
+<i>Adding some vertex color</i>
 </p>
