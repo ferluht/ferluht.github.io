@@ -5,7 +5,7 @@ layout: post
 ---
 
 <p align="center">
-<img src="{{ site.base_url }}{% link /assets/imgs/shrooms_main.jpg %}" 
+<img src="/assets/imgs/shrooms_main.jpg" 
 	 alt="Otinium caseubbacula - one of the generative mushroom specimens" width="100%">
 </p>
 
