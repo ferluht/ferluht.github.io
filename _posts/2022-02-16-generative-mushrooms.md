@@ -211,7 +211,7 @@ The geometries of the gills and ring are very similar to the geometry of the cap
 <details>
 <summary>Scales generation code</summary>
 
-<pre><code lang="javascript">
+<pre><code class="lang-javascript">
 bufgeoms = [];
 scales_num = 20;
 n_vertices = 10;
