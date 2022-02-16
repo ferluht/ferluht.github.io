@@ -209,9 +209,9 @@ function cap_surface(a0, t0) {
 The geometries of the gills and ring are very similar to the geometry of the cap. An easy way to create scales is to spawn noisy sphere points around some random anchor points on the cap surface and then create [ConvexGeometry](https://threejs.org/docs/#examples/en/geometries/ConvexGeometry) based on them.
 
 <details>
-  <summary>Scales generation code</summary>
+<summary>Scales generation code</summary>
 
-```javascript
+<pre><code lang="javascript">
 bufgeoms = [];
 scales_num = 20;
 n_vertices = 10;
@@ -241,9 +241,10 @@ for (var i = 0; i < scales_num; i++) {
 
 // join all these geometries into one BufferGeometry
 var scales = THREE.BufferGeometryUtils.mergeBufferGeometries(bufgeoms);
-```
-
+</code></pre>
 </details>
+
+<br>
 
 <p align="center">
 <img src="/assets/imgs/rest_of_mushroom.jpg" 
