@@ -307,3 +307,70 @@ The next thing on the way back to 2d is proper colorization. The texture should 
 	 alt="Adding some vertex color" width="100%">
 <i>Adding some vertex color</i>
 </p>
+
+Finally, I added some global noise and film-like grain using [EffectComposer](https://threejs.org/docs/#examples/en/postprocessing/EffectComposer).
+
+
+<details>
+<summary><b>Effect chain code</b></summary>
+<pre><code class="javascript">
+var renderer = new THREE.WebGLRenderer({antialias: true});
+outline = new THREE.OutlineEffect( renderer , {thickness: 0.01, alpha: 1, defaultColor: [0.1, 0.1, 0.1]});
+var composer = new THREE.EffectComposer(outline);
+
+// <- create scene and camera
+
+var renderPass = new THREE.RenderPass( scene, camera );
+composer.addPass( renderPass );
+
+var filmPass = new THREE.FilmPass(
+  0.20,   // noise intensity
+  0.025,  // scanline intensity
+  648,    // scanline count
+  false,  // grayscale
+);
+
+composer.addPass(filmPass);
+composer.render();
+</code></pre>
+</details>
+
+<br>
+
+<p align="center">
+<img src="/assets/imgs/almost_ready.jpg" 
+	 alt="Almost ready, colored and noisy shrooms" width="100%">
+<i>Almost ready, colored and noisy shrooms</i>
+</p>
+
+### Name generation
+
+For name generation I used a simple [Markov chain](https://en.wikipedia.org/wiki/Markov_chain) which was trained on 1k mushroom names [from here](https://www.prevalentfungi.org/fungi.cfm). To preprocess and tokenize those names I used the python library [YouTokenToMe](https://github.com/VKCOM/YouTokenToMe). With it, I split all names into 200 unique tokens and wrote their transition probabilities to a javascript dictionary. The JS side of the code only reads those probabilities and stacks tokens until it generates a couple of words. 
+
+<details>
+<summary><b>Here are some samples of mushroom names generated using this approach</b></summary>
+Stricosphaete cinus
+Fusarium sium confsisomyc
+Etiformansum poonic
+Hellatatum bataticola
+Armillanata gossypina mortic
+Chosporium anniiffact
+Fla po sporthrina
+</details>
+
+<br>
+
+## Part 3: Finalizing
+
+<p align="center">
+<img src="/assets/imgs/all_fungi.jpg" 
+	 alt="The first 15 shrooms minted on fxhash" width="100%">
+<i>The first 15 shrooms minted on fxhash</i>
+</p>
+
+### Preparing for the drop
+
+To prepare a project for a release on fxhash one simply needs to change all random calls in the code to the fxrand() method as [described here](https://github.com/fxhash/fxhash-simple-boilerplate). The main idea is that your code must generate unique outputs for each hash but exactly the same output for the same hash. Then test the token in the sandbox and finally mint it when the minting will be opened. That’s it! 
+
+This brings us to the Mushroom Atlas (what I named this collection). You can check it out and see its variations [here](https://www.fxhash.xyz/generative/9202). Although it was not sold out like some of my previous works, I think that this is the most advanced and challenging thing that I’ve made in generative art yet. Hope that those who minted this token also enjoyed their fungi in the non-fungible world!
+
