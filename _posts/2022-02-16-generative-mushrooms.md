@@ -7,9 +7,10 @@ layout: post
 <p align="center">
 <img src="/assets/imgs/shrooms_main.jpg" 
 	 alt="Otinium caseubbacula - one of the generative mushroom specimens" width="100%">
+<i>Otinium caseubbacula - one of the generative mushroom specimens</i>
 </p>
 
-### Part 1: Intro
+# Part 1: Intro
 
 In this post, I’ll try to give a brief but complete overview of what generative art is, how it is connected to NFTs, and how one can start making generative things on a blockchain. I’ll try to answer all these questions based on my personal experience of making and releasing a NFT collection of generative mushrooms written in javascript.
 
@@ -29,5 +30,5 @@ Also, there are some experimental and interactive works, even modular synthesize
 Left to right examples of math, procedural and variative artworks. Credits: ciphrd, zancan, littlesilver
 So what we will do during this article is to describe a procedural model of a mushroom and randomize it using the transaction hash. Combined with an artistic vision, composition, and stylization this gives us what’s called a generative NFT artwork.
 
-### Part 2: Drawing a mushroom 🍄 
+# Part 2: drawing a mushroom 🍄 
 
