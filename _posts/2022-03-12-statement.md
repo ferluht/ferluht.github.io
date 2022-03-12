@@ -8,6 +8,10 @@ thumbnail: "/assets/imgs/nowar.jpeg"
 layout: post
 ---
 
+<p align="center">
+<img src="/assets/imgs/nowar.jpeg" width="100%">
+</p>
+
 First things first: I'm Russian, I'm against the war, I'm against Putin.
 
 Now I'm like many of my friends and colleagues compelled to leave Russia and move to one of the close countries. I'm saying compelled because there is almost no other way to do valuable things at this moment. While staying in Russia you can easily be imprisoned for any action against this regime. You don't even need to go protesting on a central square, any small post in your social network could be actually used as evidence. There are already many cases, just google it.
